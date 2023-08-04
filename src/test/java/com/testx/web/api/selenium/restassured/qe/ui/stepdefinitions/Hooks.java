@@ -49,10 +49,10 @@ public class Hooks extends BaseSetup {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "Screenshot Failed");
 
-            //Screenshot in Allure Report
-            //AllureManager.saveScreenshotPNG(driver);
+//            Screenshot in Allure Report
+//            AllureManager.saveScreenshotPNG(driver);
         }
         System.out.println("Stop Driver: " + driver);
-        // driver.quit();
+        driver.quit();
     }
 }

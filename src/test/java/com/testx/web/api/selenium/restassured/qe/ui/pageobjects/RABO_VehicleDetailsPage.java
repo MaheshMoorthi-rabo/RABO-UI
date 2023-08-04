@@ -10,4 +10,6 @@ public class RABO_VehicleDetailsPage {
 
     @FindBy(xpath = "//button[text()='Confirm number plate']")
     public static WebElement btnConfirmNumberPlate;
+    @FindBy(xpath="//a[contains(text(),'know the number plate?')]")
+    public static WebElement dontKnowTheNumberPlate;
 }

@@ -7,6 +7,7 @@ import com.testx.web.api.selenium.restassured.qe.ui.custom_exceptions.InvalidCom
 import com.testx.web.api.selenium.restassured.qe.ui.stepdefinitions.BaseSetup;
 import io.cucumber.java.en.Then;
 import org.assertj.core.api.SoftAssertions;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,26 @@ public class PrebuiltFieldsAssertionSteps extends BaseSetup {
     public PrebuiltFieldsAssertionSteps(TestContext context) {
         super(context);
         this.testContext = context;
+    }
+
+
+
+
+
+    @Then("I verify that the field {string} is visible on the {string}")
+    public void i_verify_that_the_field_is_visible_on_the(String element, String pageclassname) {
+        boolean isElementDisplayed = driverManagerUtils.isElementDisplayed(loadWebElement(element, pageclassname));
+String type="visible";
+        switch (type) {
+            case "visible":
+                Assert.assertTrue(isElementDisplayed);
+                            break;
+//            case "invisible":
+//                Assert.assertTrue(!isElementDisplayed);
+//                break;
+            default:
+                throw new InvalidCommonStepSelectionException(type);
+        }
     }
 
     @Then("^I verify that the field (.*) should be (visible|invisible) on the (.*)$")

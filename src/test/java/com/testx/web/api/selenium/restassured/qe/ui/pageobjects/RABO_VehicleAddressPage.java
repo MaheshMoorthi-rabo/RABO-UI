@@ -15,4 +15,10 @@ public class RABO_VehicleAddressPage {
     public static WebElement btnFindAddress;
 
 
+
+
+    @FindBy(xpath="//p[contains(@class,'form-control-error-message')]")
+    public static WebElement postcodeerror;
+
+
 }

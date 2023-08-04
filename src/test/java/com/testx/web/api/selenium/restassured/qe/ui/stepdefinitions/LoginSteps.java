@@ -3,7 +3,6 @@ package com.testx.web.api.selenium.restassured.qe.ui.stepdefinitions;
 import com.testx.web.api.selenium.restassured.qe.api.constants.FilePaths;
 import com.testx.web.api.selenium.restassured.qe.common.utils.ExcelReader;
 import com.testx.web.api.selenium.restassured.qe.ui.context.TestContext;
-import com.testx.web.api.selenium.restassured.qe.ui.pageobjects.LoginPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -18,7 +17,7 @@ public class LoginSteps extends BaseSetup {
 
     TestContext testContext;
     WebDriver driver;
-    LoginPage loginPage;
+    //LoginPage loginPage;
 
     public LoginSteps(TestContext testContext) {
         super(testContext);

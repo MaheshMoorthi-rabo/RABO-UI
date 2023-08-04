@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
                 , "json:target/cucumber-report/cucumber.json", "pretty", "html:target/cucumber-report/cucumber-pretty",
                 "json:target/cucumber-report/CucumberTestReport.json"},
                 monochrome = true,
+                dryRun = false,
                 features = {"src/test/resources/ui/features/RABO_No_Login_Journey.feature"},
                 //glue = {"com.testx.web.api.selenium.restassured.qe.ui.stepdefinitions"},
                 glue = {"com.testx.web.api.selenium.restassured.qe.ui.stepdefinitions", "com.testx.web.api.selenium.restassured.qe.api.stepdefs"},
@@ -21,6 +22,8 @@ public class RunUITest extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider()
     public Object[][] scenarios() {
+
+
         return super.scenarios();
     }
 }
